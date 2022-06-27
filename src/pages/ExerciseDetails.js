@@ -20,11 +20,13 @@ const ExerciseDetails = () => {
 
       const exerciseDetailData = await fetchData(`${exerciseDbUrl}/exercises/exercise/${id}`, exerciseOptions )
       setexerciseDetail(exerciseDetailData)
+      console.log(exerciseDetailData)
 
-      const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?q=${exerciseDetail.name}`, youtubeOptions )
+      const exerciseVideosData = await fetchData(`${youtubeSearchUrl}/search?query=${exerciseDetailData.name}`, youtubeOptions )
       setexerciseVideos(exerciseVideosData)
     }
     fetchExercisesData()
+    console.log(exerciseVideos)
   },[id])
   return (
    <Box>
