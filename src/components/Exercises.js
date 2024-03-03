@@ -16,7 +16,7 @@ const Exercises = ({ Exercises, setExercise, bodyPart }) => {
       let exercisesData = [];
 
       if (bodyPart === 'all') {
-        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/exercise', exerciseOptions);
+        exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/', exerciseOptions);
       } else {
         exercisesData = await fetchData(`https://exercisedb.p.rapidapi.com/exercises/bodyPart/${bodyPart}`, exerciseOptions);
       }
@@ -34,7 +34,7 @@ const Exercises = ({ Exercises, setExercise, bodyPart }) => {
 
   const paginate = (event, value) => {
     setCurrentPage(value);
-
+    console.log(value);
     window.scrollTo({ top: 1800, behavior: 'smooth' });
   };
 
